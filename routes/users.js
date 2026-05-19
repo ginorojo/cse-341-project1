@@ -17,10 +17,9 @@ router.post('/', (req, res) => {
   /* #swagger.parameters['body'] = {
         in: 'body',
         schema: {
-          firstName: 'Gino',
-          lastName: 'Rojo',
           email: 'gino@email.com',
-          favoriteColor: 'blue',
+          username: 'gino@email.com',
+          name: 'Gino Rojo',
           ipaddress: '94.121.168.53'
         }
   } */
@@ -33,10 +32,9 @@ router.put('/:id', (req, res) => {
   /* #swagger.parameters['body'] = {
         in: 'body',
         schema: {
-          firstName: 'Gino',
-          lastName: 'Rojo',
           email: 'gino@email.com',
-          favoriteColor: 'blue',
+          username: 'gino@email.com',
+          name: 'Gino Rojo',
           ipaddress: '94.121.168.53'
         }
   } */

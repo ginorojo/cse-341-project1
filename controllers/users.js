@@ -1,6 +1,16 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
+const buildUser = (body) => ({
+  username: body.username,
+  name: body.name,
+  email: body.email,
+  ipaddress: body.ipaddress
+});
+
+const hasAllUserFields = (user) =>
+  user.username && user.name && user.email && user.ipaddress;
+
 const getAll = async (req, res) => {
   //#swagger.tags['Users]
   const result = await mongodb.getDatabase().db('project1').collection('users').find();
@@ -27,13 +37,12 @@ const getSingle = async (req, res) => {
 
 const createUsers = async (req, res) => {
     //#swagger.tags['Users]
-  const user = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    ipaddress: req.body.ipaddress
-  };
+  const user = buildUser(req.body);
+
+  if (!hasAllUserFields(user)) {
+    res.status(400).json('Please provide email, username, name and ipaddress.');
+    return;
+  }
 
   const response = await mongodb.getDatabase().db('project1').collection('users').insertOne(user);
   if (response.acknowledged) {
@@ -46,13 +55,12 @@ const createUsers = async (req, res) => {
 const updateUsers = async (req, res) => {
     //#swagger.tags['Users]
   const userId = new ObjectId(req.params.id);
-  const user = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    ipaddress: req.body.ipaddress
-  };
+  const user = buildUser(req.body);
+
+  if (!hasAllUserFields(user)) {
+    res.status(400).json('Please provide email, username, name and ipaddress.');
+    return;
+  }
 
   const response = await mongodb
     .getDatabase()

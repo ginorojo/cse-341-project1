@@ -61,21 +61,17 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "type": "string",
-                  "example": "Gino"
-                },
-                "lastName": {
-                  "type": "string",
-                  "example": "Rojo"
-                },
                 "email": {
                   "type": "string",
                   "example": "gino@email.com"
                 },
-                "favoriteColor": {
+                "username": {
                   "type": "string",
-                  "example": "blue"
+                  "example": "gino@email.com"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Gino Rojo"
                 },
                 "ipaddress": {
                   "type": "string",
@@ -88,6 +84,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "500": {
             "description": "Internal Server Error"
@@ -116,6 +115,9 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -139,21 +141,17 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "type": "string",
-                  "example": "Gino"
-                },
-                "lastName": {
-                  "type": "string",
-                  "example": "Rojo"
-                },
                 "email": {
                   "type": "string",
                   "example": "gino@email.com"
                 },
-                "favoriteColor": {
+                "username": {
                   "type": "string",
-                  "example": "blue"
+                  "example": "gino@email.com"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Gino Rojo"
                 },
                 "ipaddress": {
                   "type": "string",
