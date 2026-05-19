@@ -32,10 +32,10 @@ const createUsers = async (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    ipaddress: req.body.ipaddress
   };
 
-  const response = await mongodb.getDatabase().db().collection('users').insertOne(user);
+  const response = await mongodb.getDatabase().db('project1').collection('users').insertOne(user);
   if (response.acknowledged) {
     res.status(204).send();
   } else {
@@ -51,16 +51,16 @@ const updateUsers = async (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    ipaddress: req.body.ipaddress
   };
 
   const response = await mongodb
     .getDatabase()
-    .db()
+    .db('project1')
     .collection('users')
     .replaceOne({ _id: userId }, user);
 
-  if (response.modifiedCount > 0) {
+  if (response.matchedCount > 0) {
     res.status(204).send();
   } else {
     res.status(500).json(response.error || 'Some error occurred while updating the user.');
@@ -72,7 +72,7 @@ const deleteUsers = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDatabase()
-    .db()
+    .db('project1')
     .collection('users')
     .deleteOne({ _id: userId }, true);
 

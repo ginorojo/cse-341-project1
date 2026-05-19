@@ -5,10 +5,11 @@
     "description": "Users Api",
     "version": "1.0.0"
   },
-  "host": "cse-341-project1-cn0k.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
@@ -36,7 +37,9 @@
     },
     "/users/": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -48,7 +51,9 @@
         }
       },
       "post": {
-        "tags": [],
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -58,19 +63,24 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Gino"
                 },
                 "lastName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Rojo"
                 },
                 "email": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "gino@email.com"
                 },
                 "favoriteColor": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "blue"
                 },
-                "birthday": {
-                  "example": "any"
+                "ipaddress": {
+                  "type": "string",
+                  "example": "94.121.168.53"
                 }
               }
             }
@@ -88,7 +98,9 @@
     },
     "/users/{id}": {
       "get": {
-        "tags": [],
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -111,7 +123,9 @@
         }
       },
       "put": {
-        "tags": [],
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -127,19 +141,24 @@
               "type": "object",
               "properties": {
                 "firstName": {
+                  "type": "string",
                   "example": "Gino"
                 },
                 "lastName": {
+                  "type": "string",
                   "example": "Rojo"
                 },
                 "email": {
+                  "type": "string",
                   "example": "gino@email.com"
                 },
                 "favoriteColor": {
+                  "type": "string",
                   "example": "blue"
                 },
-                "birthday": {
-                  "example": "2000-01-01"
+                "ipaddress": {
+                  "type": "string",
+                  "example": "94.121.168.53"
                 }
               }
             }
@@ -155,7 +174,9 @@
         }
       },
       "delete": {
-        "tags": [],
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
