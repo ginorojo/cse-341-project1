@@ -119,6 +119,30 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "Gino"
+                },
+                "lastName": {
+                  "example": "Rojo"
+                },
+                "email": {
+                  "example": "gino@email.com"
+                },
+                "favoriteColor": {
+                  "example": "blue"
+                },
+                "birthday": {
+                  "example": "2000-01-01"
+                }
+              }
+            }
           }
         ],
         "responses": {
