@@ -61,21 +61,25 @@
             "schema": {
               "type": "object",
               "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Gino"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Rojo"
+                },
                 "email": {
                   "type": "string",
                   "example": "gino@email.com"
                 },
-                "username": {
+                "favoriteColor": {
                   "type": "string",
-                  "example": "gino@email.com"
+                  "example": "blue"
                 },
-                "name": {
+                "birthday": {
                   "type": "string",
-                  "example": "Gino Rojo"
-                },
-                "ipaddress": {
-                  "type": "string",
-                  "example": "94.121.168.53"
+                  "example": "2000-01-01"
                 }
               }
             }
@@ -141,21 +145,25 @@
             "schema": {
               "type": "object",
               "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Gino"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Rojo"
+                },
                 "email": {
                   "type": "string",
                   "example": "gino@email.com"
                 },
-                "username": {
+                "favoriteColor": {
                   "type": "string",
-                  "example": "gino@email.com"
+                  "example": "blue"
                 },
-                "name": {
+                "birthday": {
                   "type": "string",
-                  "example": "Gino Rojo"
-                },
-                "ipaddress": {
-                  "type": "string",
-                  "example": "94.121.168.53"
+                  "example": "2000-01-01"
                 }
               }
             }

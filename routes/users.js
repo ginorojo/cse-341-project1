@@ -17,10 +17,11 @@ router.post('/', (req, res) => {
   /* #swagger.parameters['body'] = {
         in: 'body',
         schema: {
+          firstName: 'Gino',
+          lastName: 'Rojo',
           email: 'gino@email.com',
-          username: 'gino@email.com',
-          name: 'Gino Rojo',
-          ipaddress: '94.121.168.53'
+          favoriteColor: 'blue',
+          birthday: '2000-01-01'
         }
   } */
   usersController.createUsers(req, res);
@@ -32,10 +33,11 @@ router.put('/:id', (req, res) => {
   /* #swagger.parameters['body'] = {
         in: 'body',
         schema: {
+          firstName: 'Gino',
+          lastName: 'Rojo',
           email: 'gino@email.com',
-          username: 'gino@email.com',
-          name: 'Gino Rojo',
-          ipaddress: '94.121.168.53'
+          favoriteColor: 'blue',
+          birthday: '2000-01-01'
         }
   } */
   usersController.updateUsers(req, res);

@@ -2,14 +2,15 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const buildUser = (body) => ({
-  username: body.username,
-  name: body.name,
+  firstName: body.firstName,
+  lastName: body.lastName,
   email: body.email,
-  ipaddress: body.ipaddress
+  favoriteColor: body.favoriteColor,
+  birthday: body.birthday
 });
 
 const hasAllUserFields = (user) =>
-  user.username && user.name && user.email && user.ipaddress;
+  user.firstName && user.lastName && user.email && user.favoriteColor && user.birthday;
 
 const getAll = async (req, res) => {
   //#swagger.tags['Users]
@@ -40,7 +41,7 @@ const createUsers = async (req, res) => {
   const user = buildUser(req.body);
 
   if (!hasAllUserFields(user)) {
-    res.status(400).json('Please provide email, username, name and ipaddress.');
+    res.status(400).json('Please provide firstName, lastName, email, favoriteColor and birthday.');
     return;
   }
 
@@ -58,7 +59,7 @@ const updateUsers = async (req, res) => {
   const user = buildUser(req.body);
 
   if (!hasAllUserFields(user)) {
-    res.status(400).json('Please provide email, username, name and ipaddress.');
+    res.status(400).json('Please provide firstName, lastName, email, favoriteColor and birthday.');
     return;
   }
 
